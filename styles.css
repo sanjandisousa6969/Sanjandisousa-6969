@@ -1,0 +1,66 @@
+:root {
+  --bg: #07111f;
+  --panel: #10233f;
+  --accent: #38d9a9;
+  --accent-2: #ffd166;
+  --text: #f4f7fb;
+  --muted: #aebbd0;
+  --line: rgba(255, 255, 255, 0.14);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Poppins, system-ui, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top left, #173b68, var(--bg) 42%);
+}
+
+.navbar, .section, .hero-grid, footer { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+.hero { min-height: 760px; padding: 24px 0 80px; overflow: hidden; }
+.navbar { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.brand { color: var(--text); font-size: 1.4rem; font-weight: 800; text-decoration: none; }
+.nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.nav-links a { color: var(--muted); text-decoration: none; font-weight: 600; }
+.nav-links a:hover { color: var(--accent); }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; padding-top: 90px; }
+.eyebrow { color: var(--accent); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+h1 { font-size: clamp(3rem, 8vw, 6.6rem); line-height: 0.95; margin: 12px 0 24px; }
+h2 { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.05; margin: 8px 0 22px; }
+h3 { margin-bottom: 10px; }
+p { color: var(--muted); line-height: 1.7; }
+.lede { font-size: 1.2rem; max-width: 720px; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 32px; }
+.button { border-radius: 999px; padding: 14px 24px; text-decoration: none; font-weight: 700; }
+.primary { background: var(--accent); color: #042019; }
+.secondary { border: 1px solid var(--line); color: var(--text); }
+.atom-card { position: relative; min-height: 440px; border: 1px solid var(--line); border-radius: 36px; display: grid; place-items: center; background: rgba(16, 35, 63, 0.72); box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28); }
+.nucleus { width: 116px; height: 116px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(135deg, var(--accent-2), #ff7b54); color: #201000; font-size: 2.4rem; font-weight: 800; z-index: 2; }
+.orbit, .electron { position: absolute; border-radius: 50%; }
+.orbit { border: 2px solid rgba(56, 217, 169, 0.38); width: 300px; height: 130px; }
+.orbit-one { transform: rotate(24deg); }
+.orbit-two { transform: rotate(-35deg); }
+.orbit-three { transform: rotate(90deg); }
+.electron { width: 18px; height: 18px; background: var(--accent); box-shadow: 0 0 22px var(--accent); }
+.e1 { top: 140px; right: 110px; } .e2 { left: 105px; bottom: 135px; } .e3 { right: 190px; bottom: 95px; }
+.atom-card p { position: absolute; bottom: 24px; margin: 0; }
+.section { padding: 86px 0; border-top: 1px solid var(--line); }
+.intro, .split, .hub { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: center; }
+.checklist, .resource-list article, .timeline article, .media-card, .hub-cards article { background: rgba(255,255,255,0.07); border: 1px solid var(--line); border-radius: 24px; padding: 24px; }
+.checklist p { margin: 10px 0; color: var(--text); }
+.timeline, .resource-list, .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.timeline span { color: var(--accent-2); font-weight: 800; }
+.gallery-grid { grid-template-columns: repeat(2, 1fr); }
+.media-card { min-height: 150px; display: grid; place-items: center; text-align: center; color: var(--muted); border-style: dashed; }
+button { border: 0; border-radius: 999px; padding: 12px 18px; font-weight: 700; color: #6a7485; }
+.video-plan ol { display: grid; gap: 14px; padding-left: 24px; color: var(--muted); line-height: 1.7; }
+.hub-cards { display: grid; gap: 16px; }
+.hub-cards article { display: flex; gap: 18px; align-items: center; }
+.hub-cards strong { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: #042019; }
+footer { padding: 32px 0 48px; text-align: center; }
+@media (max-width: 820px) {
+  .hero-grid, .intro, .split, .hub, .timeline, .resource-list, .gallery-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .hero { min-height: auto; }
+}
